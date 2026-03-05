@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>howtobebetter.ai — Use AI to become more human</title>
+  <meta name="description" content="A newsletter about using AI for personal growth — not productivity hacks, but actual becoming." />
+  <meta property="og:title" content="howtobebetter.ai" />
+  <meta property="og:description" content="Use AI to become more human. A newsletter about the slower, more interesting question." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F7F5F0;
+      --text:      #1C1C1A;
+      --muted:     #6B6860;
+      --accent:    #3D6B4F;
+      --accent-dk: #2C5039;
+      --border:    #DDD9D0;
+      --white:     #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Layout ── */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem 5rem;
+      max-width: 660px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ── Wordmark ── */
+    .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: var(--accent);
+      margin-bottom: 3.5rem;
+      opacity: 0.85;
+    }
+
+    /* ── Headline ── */
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* ── Body copy ── */
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+
+    .intro + .intro {
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin: 0 0 2.5rem;
+    }
+
+    /* ── Form ── */
+    .form-label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 0.85rem;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 0.6rem;
+      width: 100%;
+      flex-wrap: wrap;
+    }
+
+    .form-row input[type="email"] {
+      flex: 1 1 220px;
+      padding: 0.75rem 1rem;
+      border: 1.5px solid var(--border);
+      border-radius: 6px;
+      background: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .form-row input[type="email"]::placeholder { color: #B0ADA6; }
+
+    .form-row input[type="email"]:focus {
+      border-color: var(--accent);
+    }
+
+    .form-row button {
+      padding: 0.75rem 1.4rem;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+
+    .form-row button:hover { background: var(--accent-dk); }
+
+    .form-note {
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      opacity: 0.75;
+    }
+
+    /* ── Success state ── */
+    .success-msg {
+      display: none;
+      padding: 1rem 1.25rem;
+      background: #EEF5F1;
+      border: 1px solid #BDD8C8;
+      border-radius: 6px;
+      color: var(--accent-dk);
+      font-size: 0.95rem;
+      width: 100%;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--border);
+      letter-spacing: 0.02em;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 480px) {
+      .form-row { flex-direction: column; }
+      .form-row input[type="email"],
+      .form-row button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <p class="wordmark">howtobebetter.ai</p>
+
+  <h1>Use AI to become<br><em>more human.</em></h1>
+
+  <p class="intro">
+    Everyone is asking what AI can do. I&rsquo;m more interested in what it can help
+    you <em>become</em> &mdash; more patient, more curious, a better listener, thinker,
+    parent, citizen.
+  </p>
+
+  <p class="intro">
+    This is a newsletter about the slower, more interesting question. No hype.
+    No productivity tricks. Just one person exploring how these tools can help
+    us grow into who we&rsquo;ve always wanted to be.
+  </p>
+
+  <div class="divider"></div>
+
+  <!--
+    ══════════════════════════════════════════════════
+    KIT (CONVERTKIT) NEWSLETTER FORM
+    ──────────────────────────────────────────────────
+    Replace the form below with your Kit embed code.
+
+    In Kit:
+      1. Forms → Create Form → Inline
+      2. Style it however you like (we override styles here)
+      3. Embed → HTML → paste the <script> + <form> here
+
+    OR: paste just the Kit form action URL into the
+    form action attribute below and remove this comment.
+    ══════════════════════════════════════════════════
+  -->
+
+  <form
+    class="kit-form"
+    action="https://app.kit.com/forms/REPLACE_WITH_YOUR_FORM_ID/subscriptions"
+    method="post"
+    data-sv-form="REPLACE_WITH_YOUR_FORM_ID"
+    data-uid="REPLACE_WITH_YOUR_UID"
+    onsubmit="handleSubmit(event)"
+    novalidate
+  >
+    <label class="form-label" for="email-input">Join the newsletter</label>
+    <div class="form-row">
+      <input
+        id="email-input"
+        type="email"
+        name="email_address"
+        placeholder="your@email.com"
+        required
+        autocomplete="email"
+      />
+      <button type="submit">Subscribe &rarr;</button>
+    </div>
+    <p class="form-note">One email a week. Unsubscribe anytime.</p>
+  </form>
+
+  <div class="success-msg" id="success">
+    You&rsquo;re in. First issue coming soon &mdash; thanks for being here.
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 howtobebetter.ai
+</footer>
+
+<script>
+  function handleSubmit(e) {
+    const form = e.target;
+    const action = form.getAttribute('action');
+
+    // If the form ID hasn't been replaced yet, show a placeholder message
+    if (action.includes('REPLACE_WITH')) {
+      e.preventDefault();
+      document.querySelector('.kit-form').style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+      return;
+    }
+
+    // Real Kit submission — let it POST naturally
+    // Kit will redirect to its own confirmation page
+    // OR use fetch for a seamless in-page experience:
+    e.preventDefault();
+    const email = form.querySelector('input[type="email"]').value;
+    if (!email) return;
+
+    fetch(action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ email_address: email }),
+      mode: 'no-cors'
+    }).then(() => {
+      form.style.display = 'none';
+      document.getElementById('success').style.display = 'block';
+    });
+  }
+</script>
+
+</body>
+</html>
