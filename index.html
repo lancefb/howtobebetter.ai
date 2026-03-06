@@ -159,18 +159,6 @@
       opacity: 0.75;
     }
 
-    /* ── Success state ── */
-    .success-msg {
-      display: none;
-      padding: 1rem 1.25rem;
-      background: #EEF5F1;
-      border: 1px solid #BDD8C8;
-      border-radius: 6px;
-      color: var(--accent-dk);
-      font-size: 0.95rem;
-      width: 100%;
-    }
-
     /* ── Footer ── */
     footer {
       text-align: center;
@@ -209,30 +197,14 @@
 
   <div class="divider"></div>
 
-  <!--
-    ══════════════════════════════════════════════════
-    KIT (CONVERTKIT) NEWSLETTER FORM
-    ──────────────────────────────────────────────────
-    Replace the form below with your Kit embed code.
-
-    In Kit:
-      1. Forms → Create Form → Inline
-      2. Style it however you like (we override styles here)
-      3. Embed → HTML → paste the <script> + <form> here
-
-    OR: paste just the Kit form action URL into the
-    form action attribute below and remove this comment.
-    ══════════════════════════════════════════════════
-  -->
-
   <form
-    class="kit-form"
+    class="kit-form seva-form formkit-form"
     action="https://app.kit.com/forms/9171507/subscriptions"
     method="post"
     data-sv-form="9171507"
     data-uid="116840cc87"
-    onsubmit="handleSubmit(event)"
-    novalidate
+    data-format="inline"
+    data-version="5"
   >
     <label class="form-label" for="email-input">Join the newsletter</label>
     <div class="form-row">
@@ -249,46 +221,13 @@
     <p class="form-note">One email a week. Unsubscribe anytime.</p>
   </form>
 
-  <div class="success-msg" id="success">
-    You&rsquo;re in. First issue coming soon &mdash; thanks for being here.
-  </div>
 </main>
 
 <footer>
   &copy; 2026 howtobebetter.ai
 </footer>
 
-<script>
-  function handleSubmit(e) {
-    const form = e.target;
-    const action = form.getAttribute('action');
-
-    // If the form ID hasn't been replaced yet, show a placeholder message
-    if (action.includes('REPLACE_WITH')) {
-      e.preventDefault();
-      document.querySelector('.kit-form').style.display = 'none';
-      document.getElementById('success').style.display = 'block';
-      return;
-    }
-
-    // Real Kit submission — let it POST naturally
-    // Kit will redirect to its own confirmation page
-    // OR use fetch for a seamless in-page experience:
-    e.preventDefault();
-    const email = form.querySelector('input[type="email"]').value;
-    if (!email) return;
-
-    fetch(action, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ email_address: email }),
-      mode: 'no-cors'
-    }).then(() => {
-      form.style.display = 'none';
-      document.getElementById('success').style.display = 'block';
-    });
-  }
-</script>
+<script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
 
 </body>
 </html>
