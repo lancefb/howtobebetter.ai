@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adventures await — howtobebetter.ai</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #F7F5F0;
+      --text:      #1C1C1A;
+      --muted:     #6B6860;
+      --accent:    #3D6B4F;
+      --accent-dk: #2C5039;
+      --border:    #DDD9D0;
+      --white:     #FFFFFF;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 17px;
+      line-height: 1.65;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem 5rem;
+      max-width: 660px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .wordmark {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      color: var(--accent);
+      margin-bottom: 3.5rem;
+      opacity: 0.85;
+      text-decoration: none;
+    }
+
+    .wordmark:hover { opacity: 1; }
+
+    h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .intro {
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+      text-align: center;
+    }
+
+    .intro + .intro {
+      margin-bottom: 2.5rem;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: var(--border);
+      margin: 0 0 2.5rem;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 320px;
+      border-radius: 12px;
+      margin-bottom: 2.5rem;
+      display: block;
+    }
+
+    .ponder {
+      width: 100%;
+      border-left: 3px solid var(--accent);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 2.5rem;
+      background: rgba(61, 107, 79, 0.05);
+      border-radius: 0 6px 6px 0;
+    }
+
+    .ponder-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .ponder-question {
+      font-family: 'Lora', Georgia, serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    .back-link {
+      font-size: 0.9rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.15s;
+    }
+
+    .back-link:hover {
+      border-bottom-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.78rem;
+      color: var(--border);
+      letter-spacing: 0.02em;
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <a href="/" class="wordmark">howtobebetter.ai</a>
+
+  <h1>Adventures <em>await.</em></h1>
+
+  <p class="intro">
+    You&rsquo;re in. The first issue is on its way.
+  </p>
+
+  <p class="intro">
+    We&rsquo;ll explore how AI can help you grow into who you&rsquo;ve always
+    wanted to be &mdash; patient, curious, present. One email a week.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="ponder">
+    <p class="ponder-label">Something to sit with</p>
+    <p class="ponder-question">What does a capable non-human intelligence have to offer human intelligence?</p>
+  </div>
+
+  <img
+    src="/images/howtobebetter-2.webp"
+    alt="A figure reaching toward a star"
+    class="hero-image"
+  />
+
+  <a href="/" class="back-link">&larr; Back to howtobebetter.ai</a>
+</main>
+
+<footer>
+  &copy; 2026 howtobebetter.ai
+</footer>
+
+</body>
+</html>
